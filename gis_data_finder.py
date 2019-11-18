@@ -6,7 +6,7 @@ df = arcpy.mapping.ListDataFrames(mxd, "DeathsbyFirearm")[0]
 lyr = arcpy.mapping.ListLayers(mxd, "SoutheasternStates", df)[0]
 
 #create feature layer (temp layer) to copy to; 1st parameter input layer, 2nd parameter output layer
-arcpy.MakeFeatureLayer_management("Trowell_GunViolence.gdb/SouthernStates", "SuppressedData_lyr")
+arcpy.MakeFeatureLayer_management("Trowell_GunViolence.gdb/SoutheasternStates", "SuppressedData_lyr")
 #select by attribute
 arcpy.SelectLayerByAttribute_management(lyr, "NEW_SELECTION", "UCR_CRIME_ = Suppressed")
 #selection is made, time to copy to new layer from selection
